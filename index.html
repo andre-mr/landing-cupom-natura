@@ -1,0 +1,395 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <!-- ===================== GOOGLE TAG MANAGER ===================== -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-T66FCRD8");
+    </script>
+
+    <!-- ===================== META / SEO / OG ===================== -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cupons Natura Black Friday | Clube Promos</title>
+    <meta name="description" content="Pegue seu cupom e aplique no final da compra." />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cupons Natura Black Friday | Clube Promos" />
+    <meta property="og:description" content="Pegue seu cupom e aplique no final da compra." />
+    <meta property="og:url" content="https://consultor.clubepromos.com.br" />
+    <meta property="og:image" content="https://consultor.clubepromos.com.br/preview.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any" />
+
+    <!-- ========================= STYLES ========================== -->
+    <style>
+      :root {
+        --black: #000000;
+        --white: #ffffff;
+        --orange: #ff7a00;
+        --muted: rgba(255, 255, 255, 0.8);
+        --radius: 14px;
+        --height: 56px; /* altura uniforme para cupom e botão */
+        --maxw: 520px;
+        --gap: 14px;
+      }
+
+      /* -------- Reset mínimo e base tipográfica -------- */
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, Noto Sans, "Helvetica Neue",
+          "Apple Color Emoji", "Segoe UI Emoji";
+        background: var(--black);
+        color: var(--white);
+        line-height: 1.4;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* -------- Imagem de fundo usando object-fit: cover -------- */
+      .bg {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* garante responsividade mobile/desktop */
+        z-index: -1; /* atrás do conteúdo */
+        user-select: none;
+        pointer-events: none;
+      }
+
+      /* -------- Layout principal -------- */
+      .page {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      .content {
+        width: 100%;
+        max-width: var(--maxw);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        margin-top: 10vh;
+        transform: translateY(6vh); /* empurra um pouco abaixo do centro (regra do dedão) */
+      }
+
+      .logo {
+        width: min(300px, 70vw);
+        height: auto;
+        display: block;
+        position: fixed; /* posiciona no topo, fora do fluxo */
+        top: -35vh; /* um pouco abaixo da margem superior */
+        z-index: 1;
+      }
+
+      .lead {
+        margin: 4px 0 6px 0;
+        font-size: 20px;
+        color: var(--black);
+        font-weight: 500;
+        /* text-shadow: 0 0 6px rgba(255, 255, 255, 0.6), 0 0 12px rgba(255, 255, 255, 0.6); */
+      }
+
+      .disclaimer {
+        width: 80%;
+        font-size: 10px;
+        color: var(--muted);
+      }
+
+      /* -------- Grupo CTA: cupom + botão (mesmo tamanho) -------- */
+      .cta {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--gap);
+      }
+
+      .coupon,
+      .button {
+        width: min(82vw, var(--maxw));
+        height: var(--height);
+        border-radius: var(--radius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: larger;
+        transition: transform 0.08s ease, box-shadow 0.12s ease, background-color 0.2s ease;
+      }
+
+      .coupon {
+        background: var(--white);
+        color: #111;
+        border: 2px solid #111;
+        border-style: dashed;
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+        padding: 30px 10px;
+        font-weight: 700;
+        letter-spacing: 0.4px;
+        display: flex;
+        flex-direction: column;
+      }
+      .coupon strong {
+        color: var(--orange);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: clamp(28px, 5vw, 22px);
+      }
+      .coupon .label {
+        margin-right: 8px;
+        font-weight: 800;
+      }
+      .coupon:active {
+        transform: scale(0.985);
+      }
+      .coupon-code {
+        user-select: all; /* facilita a cópia manual */
+        font-size: x-large;
+      }
+
+      .button {
+        background: var(--black);
+        color: #fff;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        border: 2px solid #fff;
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+        cursor: pointer;
+      }
+      .button:hover {
+        filter: brightness(1.05);
+      }
+      .button:active {
+        transform: scale(0.985);
+      }
+
+      /* Regras adicionais para ícone de cópia */
+      .coupon {
+        position: relative;
+      }
+      .copy-icon {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 30px;
+        height: 30px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.15s ease;
+      }
+      .copy-icon.show {
+        opacity: 1;
+      }
+
+      /* -------- Responsividade -------- */
+      @media (min-width: 880px) {
+        .content {
+          margin-top: 20vh;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ============== GOOGLE TAG MANAGER (NOSCRIPT) ============== -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-T66FCRD8"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- ===================== BACKGROUND IMAGE ===================== -->
+    <img class="bg" src="background.png" alt="Textura temÃ¡tica Black Friday" />
+
+    <!-- ========================= CONTENT ========================== -->
+    <main class="page">
+      <section class="content" aria-label="Seção principal">
+        <!-- ---------- Logo centralizado ---------- -->
+        <img class="logo" src="logo.png" alt="Logo da marca" />
+
+        <!-- ---------- Texto de instrução ---------- -->
+        <p class="lead">Pegue seu cupom e aplique no final da compra.</p>
+
+        <!-- ---------- CTA: Cupom + Botão ---------- -->
+        <div class="cta">
+          <!-- Elemento de exibição do cupom (mesmo tamanho do botão) -->
+          <div>
+            <div class="coupon" id="coupon-box" role="note" aria-live="polite">
+              <strong class="coupon-code" id="coupon-code"></strong>
+              <!-- Ícone de cópia verde exibido por 1s após copiar -->
+              <svg
+                width="800px"
+                height="800px"
+                viewBox="0 0 1024 1024"
+                class="copy-icon"
+                id="copy-icon"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M589.3 260.9v30H371.4v-30H268.9v513h117.2v-304l109.7-99.1h202.1V260.9z" fill="#98FB98" />
+                <path d="M516.1 371.1l-122.9 99.8v346.8h370.4V371.1z" fill="#98FB98" />
+                <path d="M752.7 370.8h21.8v435.8h-21.8z" fill="#008000" />
+                <path d="M495.8 370.8h277.3v21.8H495.8z" fill="#008000" />
+                <path d="M495.8 370.8h21.8v124.3h-21.8z" fill="#008000" />
+                <path d="M397.7 488.7l-15.4-15.4 113.5-102.5 15.4 15.4z" fill="#008000" />
+                <path d="M382.3 473.3h135.3v21.8H382.3z" fill="#008000" />
+                <path d="M382.3 479.7h21.8v348.6h-21.8zM404.1 806.6h370.4v21.8H404.1z" fill="#008000" />
+                <path
+                  d="M447.7 545.1h261.5v21.8H447.7zM447.7 610.5h261.5v21.8H447.7zM447.7 675.8h261.5v21.8H447.7z"
+                  fill="#008000"
+                />
+                <path d="M251.6 763h130.7v21.8H251.6z" fill="#008000" />
+                <path
+                  d="M251.6 240.1h21.8v544.7h-21.8zM687.3 240.1h21.8v130.7h-21.8zM273.4 240.1h108.9v21.8H273.4z"
+                  fill="#008000"
+                />
+                <path
+                  d="M578.4 240.1h130.7v21.8H578.4zM360.5 196.5h21.8v108.9h-21.8zM382.3 283.7h196.1v21.8H382.3zM534.8 196.5h65.4v21.8h-65.4z"
+                  fill="#008000"
+                />
+                <path
+                  d="M360.5 196.5h65.4v21.8h-65.4zM404.1 174.7h152.5v21.8H404.1zM578.4 196.5h21.8v108.9h-21.8z"
+                  fill="#008000"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Botão de compra como Âncora; abre na mesma guia -->
+          <a
+            class="button"
+            id="buy-link"
+            href="https://www.minhaloja.natura.com/consultoria/pechincheiro?marca=natura"
+            aria-label="Comprar agora"
+          >
+            COMPRE AGORA
+          </a>
+        </div>
+
+        <!-- ---------- Aviso de destino ---------- -->
+        <p class="disclaimer">
+          Você será direcionado para minha loja Natura, onde as compras são realizadas com segurança sob minha
+          consultoria.
+        </p>
+      </section>
+    </main>
+
+    <!-- ========================== SCRIPT ========================== -->
+    <script>
+      // Utilidades: copia para a área de transferência com fallback
+      async function copyToClipboard(text) {
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(text);
+            return true;
+          }
+        } catch (err) {
+          // continua para o fallback
+        }
+        try {
+          const el = document.createElement("textarea");
+          el.value = text;
+          el.setAttribute("readonly", "");
+          el.style.position = "fixed";
+          el.style.top = "-9999px";
+          document.body.appendChild(el);
+          el.select();
+          document.execCommand("copy");
+          document.body.removeChild(el);
+          return true;
+        } catch (err) {
+          return false;
+        }
+      }
+
+      // Inicialização: lê parâmetros da URL e injeta valores
+      (function initFromQuery() {
+        const params = new URL(window.location.href).searchParams;
+        const couponParam = params.get("cupom");
+        const linkParam = params.get("link");
+
+        const couponCodeEl = document.getElementById("coupon-code");
+        const buyLinkEl = document.getElementById("buy-link");
+
+        if (couponParam) {
+          couponCodeEl.textContent = couponParam.trim();
+        }
+        if (linkParam) {
+          // MantÃ©m abertura na mesma aba
+          buyLinkEl.setAttribute("href", linkParam);
+        }
+      })();
+
+      // Clique no botão: copia o cupom e navega
+      (function wireClick() {
+        const couponCodeEl = document.getElementById("coupon-code");
+        const buyLinkEl = document.getElementById("buy-link");
+
+        buyLinkEl.addEventListener("click", async function (ev) {
+          // Previne navegação imediata para garantir a cópia antes
+          ev.preventDefault();
+          const targetHref = buyLinkEl.getAttribute("href") || "#";
+          const code = (couponCodeEl.textContent || "").trim();
+
+          try {
+            await copyToClipboard(code);
+          } catch (_) {
+            // Mesmo se falhar, seguimos para a navegação
+          }
+
+          // Redireciona pela mesma guia (fallback seguro ao href)
+          if (targetHref && targetHref !== "#") {
+            window.location.href = targetHref;
+          }
+        });
+      })();
+    </script>
+    <script>
+      // Ao tocar/clicar no box do cupom: copiar e exibir ícone por 1s
+      (function () {
+        const couponBoxEl = document.getElementById("coupon-box");
+        const couponCodeEl = document.getElementById("coupon-code");
+        const copyIconEl = document.getElementById("copy-icon");
+        if (!couponBoxEl) return;
+        couponBoxEl.addEventListener("click", async function () {
+          const code = ((couponCodeEl && couponCodeEl.textContent) || "").trim();
+          try {
+            if (code) {
+              await copyToClipboard(code);
+            }
+          } catch (_) {}
+          if (copyIconEl) {
+            copyIconEl.classList.add("show");
+            setTimeout(() => copyIconEl.classList.remove("show"), 1000);
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
